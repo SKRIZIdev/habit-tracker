@@ -35,3 +35,19 @@ nav a:hover,nav a.active{color:var(--accent)}
 .empty{color:var(--muted);text-align:center;padding:40px}
 .prose{color:var(--muted)} .prose h3{color:var(--txt);margin:16px 0 6px}
 .foot{text-align:center;color:var(--muted);padding:28px;font-size:.85rem;border-top:1px solid var(--line)}
+
+/* ---- enhancements: animations ---- */
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes popIn{0%{transform:scale(.8);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.title,.sub,.addbar{opacity:0;animation:riseIn .5s ease both}
+.sub{animation-delay:.06s}.addbar{animation-delay:.12s}
+.addbar .btn{transition:transform .1s,filter .15s}.addbar .btn:active{transform:scale(.95)}
+.habit{opacity:0;animation:riseIn .5s ease both}
+.habit:nth-child(2){animation-delay:.06s}.habit:nth-child(3){animation-delay:.12s}.habit:nth-child(4){animation-delay:.18s}
+.box{transition:transform .12s,background .2s,border-color .2s}
+.box:hover{border-color:var(--accent);transform:translateY(-2px)}
+.box:active{transform:scale(.9)}
+.box.on{animation:popIn .3s ease}
+.srow{opacity:0;animation:riseIn .5s ease both}
+.srow:nth-child(2){animation-delay:.08s}.srow:nth-child(3){animation-delay:.16s}
+.srow .nums b{display:inline-block;transition:transform .2s}.srow:hover .nums b{transform:scale(1.15)}
